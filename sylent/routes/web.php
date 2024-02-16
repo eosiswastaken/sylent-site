@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\StatsController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
@@ -13,3 +14,6 @@ Route::get('/accueil', [FormController::class, 'ShowHome'])->name('accueil');
 Route::get('/admin', [FormController::class, 'showAdminPage'])->name('admin');
 Route::post('/generate-url', [FormController::class, 'generateUrl'])->name('generate-url');
 Route::view('/confirmation', 'form/confirmation')->name('confirmation');
+
+//Route stats
+Route::get('/stats', [StatsController::class, 'showStats'])->name('stats');

@@ -18,11 +18,11 @@ class FormFactory extends Factory
     public function definition(): array
     {
         return [
-            'module' => $this ->faker->sentence,
-            'url_form' => $this -> faker->url,
+            'module' => $this ->faker->word(),
+            'url_form' => $this -> faker->url(),
             'expiration_date_url' => $this -> faker->dateTimeBetween('now', '+1 month'),
             'module_date' => $this -> faker->dateTimeBetween('-1 year', 'now'),
-            'class' => $this -> faker->word,
+            'class' => $this -> faker->word(),
         ];
     }
 }

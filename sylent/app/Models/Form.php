@@ -13,7 +13,7 @@ class Form extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'idform',
+        'id',
         'module',
         'url_form',
         'expiration_date_url',
@@ -24,6 +24,6 @@ class Form extends Model
     // Relation avec la table questions
     public function questions()
     {
-        return $this->hasMany(Question::class);
+        return $this->hasMany(Question::class, 'form_id', 'idform');
     }
 }

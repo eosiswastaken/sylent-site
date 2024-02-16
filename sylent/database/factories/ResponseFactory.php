@@ -17,7 +17,7 @@ class ResponseFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'response' => $this ->faker->numberBetween(1,5)
         ];
     }
 }
