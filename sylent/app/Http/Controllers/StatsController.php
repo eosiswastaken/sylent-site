@@ -3,16 +3,25 @@
 namespace App\Http\Controllers;
 
 use App\Models\Form;
+use App\Models\Question;
 use Illuminate\Http\Request;
 
 class StatsController extends Controller
 {
     public function showStats()
     {
-        // Récupérer tous les formulaires
         $forms = Form::with('questions.responses')->get();
+        $lastForm = $forms->last();
+        $lastFormComments = [];
+        $lastFormComments = [];
+        foreach ($lastForm->questions as $question) {
+            if ($question->title_question === 'comments') {
+                foreach($question->responses as $response) {
+                    $lastFormComments[] = $response->response;
+                } 
+            }
+        }
 
-        // Passer les données à la vue
-        return view('form/stats', ['forms' => $forms]);
+        return view('form.stats', compact('forms', 'lastForm', 'lastFormComments'));
     }
 }

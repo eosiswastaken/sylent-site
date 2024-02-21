@@ -27,6 +27,6 @@ class Question extends Model
     // Relation avec la table responses
     public function responses()
     {
-        return $this->hasMany(Response::class, 'question_id', 'idquestion');
+        return $this->hasMany(Response::class, 'question_id', 'id');
     }
 }

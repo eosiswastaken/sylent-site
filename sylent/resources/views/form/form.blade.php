@@ -22,7 +22,7 @@
 
     <nav class="bg-blue-500 p-4 text-white">
         <div class="container mx-auto">
-            <h1 class="text-2xl font-bold">Formulaire de fin module : Laravel</h1>
+            <h1 class="text-2xl font-bold">Formulaire de fin module : {{ $moduleName }}</h1>
         </div>
     </nav>
     <div class="container mx-auto mt-10 bg-white p-6 rounded-md shadow-md">

@@ -49,11 +49,6 @@ class FormController extends Controller
         $url = URL::temporarySignedRoute(
             'formulaire',
             now()->addMinutes(30),
-            [
-                'module' => $validatedData['module'],
-                'module_date' => $validatedData['module_date'],
-                'class' => $validatedData['class'],
-            ]
         );
 
 
@@ -106,7 +101,6 @@ class FormController extends Controller
                 'question_id' => $newQuestion->id,
             ]);
         }
-        Session::forget('formId');
         return redirect()->route('confirmation');
     }
 }

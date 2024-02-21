@@ -24,6 +24,6 @@ class Form extends Model
     // Relation avec la table questions
     public function questions()
     {
-        return $this->hasMany(Question::class, 'form_id', 'idform');
+        return $this->hasMany(Question::class, 'form_id', 'id');
     }
 }
